@@ -3,46 +3,54 @@
     padding: 0;
     box-sizing: border-box;
 }
-.container nav{
+
+.container nav {
     display: flex;
     justify-content: space-around;
     background-color: #055885;
 }
-.container nav ul{
+
+.container nav ul {
     display: flex;
     justify-content: space-between;
     list-style-type: none;
     padding: 20px;
 }
-.container nav ul li a{
+
+.container nav ul li a {
     font-size: 25px;
     text-decoration: none;
-    color:rgb(212, 196, 196);
+    color: rgb(212, 196, 196);
     padding: 10px;
 }
-.container nav a:hover{
+
+.container nav a:hover {
     background-color: #ccd1d4;
     color: black;
 }
-.container .main{
-    background-image: url('./images/main.jpg');
+
+.container .main {
+    background-image: url('./images/main2.jpeg');
     /* background-repeat: no-repeat;
     background-size: auto; */
     background-repeat: no-repeat;
     background-size: 100% 100%;
     color: #ccd1d4;
     text-align: center;
-    padding:21% 0;
+    padding: 21% 0;
 }
-.container .main h1{
+
+.container .main h1 {
     font-size: 60px;
     color: #e6ebed;
 }
-.container .main p{
+
+.container .main p {
     font-size: 25px;
     color: #e6ebed;
 }
-.container .main button{
+
+.container .main button {
     background-color: #055885;
     font-size: 20px;
     cursor: pointer;
@@ -50,10 +58,11 @@
     border-radius: 7px;
 }
 
-.container .main button:hover{
+.container .main button:hover {
     background-color: #91090d;
     color: white;
 }
+
 
 /* input[type=text], input[type=password] {
     width: 25%;
@@ -65,15 +74,13 @@
     box-sizing: border-box;
   } */
 
-.image_preview{
+.image_preview {
     width: 510px;
     height: 310px;
     border: 2px solid rgb(40, 39, 39);
 }
 
-
-
-input[type=submit]{
+input[type=submit] {
     width: 25%;
     padding: 12px 20px;
     margin: 8px 0;
@@ -81,14 +88,16 @@ input[type=submit]{
     border: 2px solid #9f9595;
     border-radius: 5px;
     box-sizing: border-box;
-    background-color:green;
+    background-color: green;
     font-size: 20px;
     font-weight: 200;
-  }
-  input[type=submit]:hover{
+}
+
+input[type=submit]:hover {
     background-color: rgb(111, 22, 32);
     color: #ccd1d4;
-  }
+}
+
 input[type=file] {
     width: 25%;
     padding: 12px 20px;
@@ -98,7 +107,8 @@ input[type=file] {
     /* border: 2px solid #9f9595; */
     /* border-radius: 5px;
     box-sizing: border-box; */
-  }
+}
+
 
 /* .container .pie {
     width: 500px;
@@ -107,7 +117,7 @@ input[type=file] {
     border-radius: 50%
   } */
 
-.container .evalution_table{
+.container .evalution_table {
     margin: 2% 38%;
     /* width: 50%; */
     /* border: 1px solid rgb(60, 62, 60); */
@@ -116,14 +126,16 @@ input[type=file] {
     line-height: 1.5cm;
 }
 
+
 /* Charts CSS */
+
 .search {
     width: 100%;
     position: relative;
     display: flex;
-  }
-  
-  .searchTerm {
+}
+
+.searchTerm {
     width: 100%;
     border: 3px solid #00B4CC;
     border-right: none;
@@ -132,13 +144,13 @@ input[type=file] {
     border-radius: 5px 0 0 5px;
     outline: none;
     color: #9DBFAF;
-  }
-  
-  .searchTerm:focus{
+}
+
+.searchTerm:focus {
     color: #00B4CC;
-  }
-  
-  .searchButton {
+}
+
+.searchButton {
     width: 40px;
     height: 36px;
     border: 1px solid #00B4CC;
@@ -148,13 +160,15 @@ input[type=file] {
     border-radius: 0 5px 5px 0;
     cursor: pointer;
     font-size: 20px;
-  }
-  
-  /*Resize the wrap to see the search bar change!*/
-  .wrap{
+}
+
+
+/*Resize the wrap to see the search bar change!*/
+
+.wrap {
     width: 30%;
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-  }
+}

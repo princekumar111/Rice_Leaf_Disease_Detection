@@ -1,10 +1,14 @@
 from flask import Flask, render_template, request
-from keras.preprocessing.image import load_img
-from keras.preprocessing.image import img_to_array
+# from keras.preprocessing.image import load_img
+# from keras.preprocessing.image import img_to_array
+from tensorflow.keras.utils import load_img
+from tensorflow.keras.utils import load_img, img_to_array
+from tensorflow.keras.models import load_model
 from keras.applications.vgg16 import preprocess_input
 from keras.applications.vgg16 import decode_predictions
 #from keras.applications.vgg16 import VGG16
-from keras.applications.resnet50 import ResNet50
+from tensorflow.keras.applications import ResNet50
+
 import pickle
 from keras.preprocessing import image
 import numpy as np
@@ -43,11 +47,17 @@ def predictDisease():
     imagefile= request.files['imagefile']
     image_path = "./static/images/" + imagefile.filename
     imagefile.save(image_path)
-    loaded_model = load_model('rice_leaf_model.h5')
+    # loaded_model = load_model('rice_leaf_model.h5')
+    loaded_model = load_model('rice_leaf_model.h5', compile=False)
+
     #new_image_path = '/content/drive/MyDrive/Test_Cat_Dog/cats/cat.4686.jpg'
-    img = image.load_img(image_path, target_size=(224, 224))
-    img_array = image.img_to_array(img)
+    # img = load_img(image_path, target_size=(224, 224))
+    # img = img_to_array(img)
+    # img_array = np.expand_dims(img_array, axis=0)
+    img = load_img(image_path, target_size=(224, 224))
+    img_array = img_to_array(img)
     img_array = np.expand_dims(img_array, axis=0)
+    img_array = img_array / 255.0
     predictions = loaded_model.predict(img_array)
 
     # Get the class index with the highest probability
