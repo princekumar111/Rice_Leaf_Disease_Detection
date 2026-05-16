@@ -105,5 +105,5 @@ Mobile responsive UI
 
 👨‍💻 Author
 
-Piyush Ranjan Singh
+Prince Kumar
 Machine Learning & Full Stack Enthusiast
