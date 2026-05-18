@@ -8,6 +8,7 @@ const __filename = fileURLToPath(
 const __dirname = path.dirname(__filename);
 
 export default defineConfig({
+    base: "/",
     server: {
         host: "::",
         port: 8080,
