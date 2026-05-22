@@ -123,7 +123,7 @@ const ImageUploadSection = () => {
       // Convert base64 image (from FileReader) back to Blob
       const res = await fetch(image);
       const blob = await res.blob();
-      formData.append("image", blob, "leaf-image.jpg");
+      formData.append("file", blob, "leaf-image.jpg");
 
       const response = await fetch("https://paddy-guard-backend.onrender.com/predict", {
         method: "POST",
