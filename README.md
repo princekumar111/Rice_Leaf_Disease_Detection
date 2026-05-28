@@ -104,6 +104,5 @@ Add more disease categories
 Mobile responsive UI
 
 👨‍💻 Author
-
 Prince Kumar
-Machine Learning & Full Stack Enthusiast
+
