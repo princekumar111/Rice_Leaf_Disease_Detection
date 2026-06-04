@@ -1,5 +1,13 @@
 from flask import Flask, request, jsonify
 from flask_cors import CORS
+
+
+
+import os
+
+os.environ["CUDA_VISIBLE_DEVICES"] = "-1"
+os.environ["TF_CPP_MIN_LOG_LEVEL"] = "3"
+import tensorflow as tf
 from tensorflow.keras.models import load_model
 import numpy as np
 from PIL import Image
@@ -40,7 +48,10 @@ def predict():
         img = np.array(img) / 255.0
         img = np.expand_dims(img, axis=0)
 
-        prediction = model.predict(img)
+        
+
+        prediction = model.predict(img, verbose=0)
+        
         result = class_names[np.argmax(prediction)]
 
         return jsonify({
