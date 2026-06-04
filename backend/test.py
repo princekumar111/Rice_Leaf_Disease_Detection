@@ -1,6 +1,6 @@
 import requests
 
-url = "http://127.0.0.1:5000/predict"
+url = "https://rice-leaf-disease-detection-waco.onrender.com/predict"
 
 files = {
     "image": open("dataset\Brown_spot\Brown_spot (12).jpg", "rb")
