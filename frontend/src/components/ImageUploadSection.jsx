@@ -125,7 +125,7 @@ const ImageUploadSection = () => {
       const blob = await res.blob();
       formData.append("file", blob, "leaf-image.jpg");
 
-      const response = await fetch("https://paddy-guard-backend.onrender.com/predict", {
+      const response = await fetch("https://rice-leaf-disease-detection-waco.onrender.com/predict"), {
         method: "POST",
         body: formData,
       });
