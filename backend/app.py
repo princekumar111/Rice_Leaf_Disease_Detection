@@ -5,6 +5,14 @@ import numpy as np
 from PIL import Image
 
 app = Flask(__name__)
+
+
+
+    @app.route('/')
+def home():
+    return "Rice Leaf Disease API is running"
+
+
 CORS(app)
 model = load_model("rice_model.h5")
 
@@ -25,7 +33,3 @@ def predict():
 if __name__ == "__main__":
     app.run(host="0.0.0.0", port=5000)
 
-
-    @app.route('/')
-def home():
-    return "Rice Leaf Disease API is running"
