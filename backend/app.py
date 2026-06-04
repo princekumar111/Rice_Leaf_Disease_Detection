@@ -6,20 +6,35 @@ from PIL import Image
 
 
 app = Flask(__name__)
+
 CORS(
     app,
-    resources={
-        r"/*": {
-            "origins": "*"
-        }
-    }
+    origins=[
+        "https://rice-leaf-disease-detection-phi.vercel.app"
+    ]
 )
+
+
+@app.after_request
+def after_request(response):
+    response.headers.add(
+        "Access-Control-Allow-Origin",
+        "https://rice-leaf-disease-detection-phi.vercel.app"
+    )
+    response.headers.add(
+        "Access-Control-Allow-Headers",
+        "Content-Type"
+    )
+    response.headers.add(
+        "Access-Control-Allow-Methods",
+        "GET,POST,OPTIONS"
+    )
+    return response
 
 
 @app.route('/')
 def home():
     return "Rice Leaf Disease API is running"
-
 
 model = load_model("rice_model.h5")
 
