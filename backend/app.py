@@ -7,29 +7,9 @@ from PIL import Image
 
 app = Flask(__name__)
 
-CORS(
-    app,
-    origins=[
-        "https://rice-leaf-disease-detection-phi.vercel.app"
-    ]
-)
 
+CORS(app, resources={r"/*": {"origins": "*"}})
 
-@app.after_request
-def after_request(response):
-    response.headers.add(
-        "Access-Control-Allow-Origin",
-        "https://rice-leaf-disease-detection-phi.vercel.app"
-    )
-    response.headers.add(
-        "Access-Control-Allow-Headers",
-        "Content-Type"
-    )
-    response.headers.add(
-        "Access-Control-Allow-Methods",
-        "GET,POST,OPTIONS"
-    )
-    return response
 
 
 @app.route('/')
