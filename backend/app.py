@@ -12,7 +12,7 @@ class_names = ['Brown_spot','Bacterial_Blight','Healthy','Leaf_Blast']
 
 @app.route('/predict', methods=['POST'])
 def predict():
-    file = request.files['image']
+    file = request.files['file']
     img = Image.open(file).resize((224,224))
     img = np.array(img)/255.0
     img = np.expand_dims(img, axis=0)
