@@ -125,10 +125,13 @@ const ImageUploadSection = () => {
       const blob = await res.blob();
       formData.append("file", blob, "leaf-image.jpg");
 
-      const response = await fetch("https://rice-leaf-disease-detection-waco.onrender.com/predict"), {
-        method: "POST",
-        body: formData,
-      });
+      const response = await fetch(
+  "https://rice-leaf-disease-detection-waco.onrender.com/predict",
+  {
+    method: "POST",
+    body: formData,
+  }
+);
 
       const data = await response.json();
 
