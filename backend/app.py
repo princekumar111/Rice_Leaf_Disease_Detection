@@ -7,8 +7,7 @@ import os
 
 os.environ["CUDA_VISIBLE_DEVICES"] = "-1"
 os.environ["TF_CPP_MIN_LOG_LEVEL"] = "3"
-import tensorflow as tf
-from tensorflow.keras.models import load_model
+
 import numpy as np
 from PIL import Image
 
@@ -24,7 +23,7 @@ CORS(app, resources={r"/*": {"origins": "*"}})
 def home():
     return "Rice Leaf Disease API is running"
 
-model = load_model("rice_model.h5")
+import tflite_runtime.interpreter as tflite
 
 class_names = [
     'Brown_spot',
