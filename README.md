@@ -1,4 +1,10 @@
-🌾 Rice Leaf Disease Classification (Full Stack ML Web App)
+🌾 Rice Leaf Disease Classification (Full Stack ML Website)
+
+# Rice Leaf Disease Detection 🌱
+
+🔗 Live Demo: https://rice-leaf-disease-detection-phi.vercel.app
+
+A full-stack AI application for detecting rice leaf diseases using CNN and Transfer Learning.
 
 📌 Project Overview
 
