@@ -32,6 +32,18 @@ class_names = [
     'Leaf_Blast'
 ]
 
+import tflite_runtime.interpreter as tflite
+
+
+interpreter = tflite.Interpreter(
+    model_path="rice_model.tflite"
+)
+
+interpreter.allocate_tensors()
+
+input_details = interpreter.get_input_details()
+output_details = interpreter.get_output_details()
+
 
 @app.route('/predict', methods=['POST'])
 def predict():
