@@ -44,24 +44,32 @@ def predict():
         img = Image.open(file).convert("RGB")
         img = img.resize((224, 224))
 
-        img = np.array(img) / 255.0
+        img = np.array(img, dtype=np.float32)
+        img = img / 255.0
         img = np.expand_dims(img, axis=0)
 
-        
+        interpreter.set_tensor(
+            input_details[0]['index'],
+            img
+        )
 
-        prediction = model.predict(img, verbose=0)
-        
-        result = class_names[np.argmax(prediction)]
+        interpreter.invoke()
+
+        prediction = interpreter.get_tensor(
+            output_details[0]['index']
+        )
+
+        result = class_names[int(np.argmax(prediction))]
 
         return jsonify({
             "prediction": result
         })
 
     except Exception as e:
+        print("ERROR:", e)
         return jsonify({
             "error": str(e)
         }), 500
-
 
 if __name__ == "__main__":
     app.run(host="0.0.0.0", port=5000)
