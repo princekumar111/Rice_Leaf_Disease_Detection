@@ -103,11 +103,9 @@ Full Stack Architecture
 
 🔮 Future Improvements
 
-Add confidence percentage
-Improve model accuracy with augmentation
-Deploy on cloud (Render / Vercel)
-Add more disease categories
-Mobile responsive UI
+📱 Develop a mobile application to allow farmers to easily detect rice leaf diseases directly from their smartphones.
+🤖 Integrate an AI chatbot assistant to help farmers with disease information, prevention tips, and treatment suggestions.
+🌐 Add multilingual support to improve accessibility for farmers from different regions and language backgrounds.
 
 👨‍💻 Author
 Prince Kumar
